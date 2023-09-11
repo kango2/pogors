@@ -19,4 +19,4 @@ The script will also generate a followup [cleanup.sh] script in your working dir
 NOTES:
 1. For whatever reason, local installation of RepeatModeler will run slower than conda installation (significantly slower, possibly a bug on the software's end), it is therefore why this script uses the conda installation of RepeatModeler 2.0.4 on NCI gadi.
 2. The LTR pipeline within RepeatModeler does not seem to be working, therefore it is excluded in the parameters.
-3. **Output files:** '${workingdir}/database/${species}-families.fa' and '${workingdir}/database/${species}-families.stk'
+3. **Output files:** `${workingdir}/database/${species}-families.fa` and `${workingdir}/database/${species}-families.stk`
