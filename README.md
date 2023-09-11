@@ -1,5 +1,5 @@
 # Generate TE library using RepeatModeler
-When soft masking your genome, using a taxon repeats library (eg. from Dfam) will often result in low masking efficiency because the library lacks the species-specific repeats for your particular species. The presence of unmasked repeats in your genome, especially in high density will impede downstream annotation. Therefore, it is crucial to generate a species-specific repeat library in such cases.
+When soft masking your genome, using a taxon repeats library (eg. from Dfam) will often result in low masking percentage because the library lacks the species-specific repeats for your particular species. The presence of unmasked repeats in your genome, especially in high density will impede downstream annotation. Therefore, it is crucial to generate a species-specific repeat library in such cases.
 
 Scripts to generate custom species-specific repeats library can be found here [run_repeatmodeler.sh](https://github.com/kango2/pogors/blob/main/run_repeatmodeler.sh). It can be launched as follows.
 ```
