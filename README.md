@@ -8,7 +8,7 @@ export inputgenome="/path/to/genome.fa"
 export species="Species_name"
 qsub -P ${PROJECT} -o ${workingdir} -v workingdir=${workingdir},inputgenome=${inputgenome},species=${species} run_repeatmodeler.sh
 ```
-or a one liner
+OR a one liner
 ```
 qsub -P ${PROJECT} -o /path/to/workingdir -v workingdir=/path/to/workingdir,inputgenome=/path/to/genome.fa,species=Species_name run_repeatmodeler.sh
 ```
