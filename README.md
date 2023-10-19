@@ -12,7 +12,7 @@ OR a one liner
 ```
 qsub -P ${PROJECT} -o /path/to/workingdir -v workingdir=/path/to/workingdir,inputgenome=/path/to/genome.fa,species=Species_name run_repeatmodeler.sh
 ```
-
+The output repeat library (location below) can be used as a custom repeats library in RepeatMasker to mask your genome, or you could concatenate this species-specific library with your taxon repeats library and use that instead.
 NOTES:
 1. For whatever reason, local installation of RepeatModeler will run slower than conda installation (significantly slower, possibly a bug on the software's end), it is therefore why this script uses the conda installation of RepeatModeler 2.0.4 on NCI gadi.
 2. The LTR pipeline within RepeatModeler does not seem to be working, therefore it is excluded in the parameters.
