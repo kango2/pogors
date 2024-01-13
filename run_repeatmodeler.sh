@@ -14,7 +14,7 @@ BuildDatabase -name ${species} -engine ncbi ${inputgenome}
 
 mkdir -p $TMPDIR/${species}_RepeatModeler
 cd $TMPDIR/${species}_RepeatModeler
-RepeatModeler -database ${workingdir}/database/${species} -pa ${PBS_NCPUS} > ${workingdir}/out.log
+RepeatModeler -database ${workingdir}/database/${species} -threads ${PBS_NCPUS} > ${workingdir}/out.log
 export RM_folder=$(ls | grep RM_)
 tar cf ${RM_folder} | pigz -p ${PBS_NCPUS} > ${RM_folder}.tar.gz
 rsync ${RM_folder}.tar.gz ${workingdir}
