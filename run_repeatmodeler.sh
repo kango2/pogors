@@ -16,7 +16,7 @@ mkdir -p $TMPDIR/${species}_RepeatModeler
 cd $TMPDIR/${species}_RepeatModeler
 RepeatModeler -database ${workingdir}/database/${species} -threads ${PBS_NCPUS} > ${workingdir}/out.log
 export RM_folder=$(ls | grep RM_)
-tar cf ${RM_folder} | pigz -p ${PBS_NCPUS} > ${RM_folder}.tar.gz
+tar cf - ${RM_folder} | pigz -p ${PBS_NCPUS} > ${RM_folder}.tar.gz
 rsync ${RM_folder}.tar.gz ${workingdir}
 
 #output repeat library will be in ${workingdir}/database named:
