@@ -37,7 +37,7 @@ sample2_2lanes	PE	RF	/path/to/sample2_R1_L001.fq.gz,/path/to/sample2_R1_L002.fq.
 sample3_1lane	SE	R	/path/to/sample3_R1.fq.gz
 sample4_2lanes	SE	US	/path/to/sample4_R1_L001.fq.gz,/path/to/sample4_R1_L002.fq.gz
 ```
-The command to submit jobs is also different from the pogo repository, this is the updated command
+- The command to submit jobs is also different from the pogo repository, this is the updated command
 ```
 cat trinity.filelist | \
 xargs -l bash -c 'command qsub -j oe -o /PBS/outputdir/$0.OU \
