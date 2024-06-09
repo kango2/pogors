@@ -21,7 +21,8 @@ NOTES:
 # Transcriptome assembly using Trinity
 Similar to the script in `https://github.com/kango2/pogo` but with sequencing type support (handles PE and SE) and no need to merge multi-lanes data  
 Changes are:  
-The tsv `trinity.filelist` now needs 5 columns for PE data and 4 columns for SE data, the columns are:
+- A new runtrinity.sh script `runtrinityModified.sh` available in this repo.  
+- The tsv `trinity.filelist` now needs 5 columns for PE data and 4 columns for SE data, the columns are:
 1. Unique name of the assembly output	(sample identifier)
 2. Sequencing type	(either SE or PE)
 3. Strandedness of RNAseq data for that sample	(for PE samples, one of RF/FR/US)(for SE samples, one of R/F/US)
@@ -43,3 +44,13 @@ xargs -l bash -c 'command qsub -j oe -o /PBS/outputdir/$0.OU \
 -v outputdir=/path/2/save/assemblies/Trinity,fileid=\"$0\",seqtype=\"$1\",sstype=\"$2\",leftfq=\"$3\",rightfq=\"$4\" \
 runtrinityModified.sh'
 ```
+## Transcriptome rename fasta header using seqkit
+The trinity assmblies have default fasta header prefix `TRINITY_` this loop command using seqkit changes the prefix to the sample identifier (will be extracted from filename)  
+```
+module load seqkit/2.5.1
+for i in $(ls /path/to/trinity/assemblies/*.trinity.Trinity.fasta); do
+    export base=$(basename ${i} .trinity.Trinity.fasta)
+    cat ${i} | seqkit replace -p ^TRINITY_ -r ${base}_ > /path/to/trinity/assemblies/${base}_renamed.fasta
+done
+```
+
