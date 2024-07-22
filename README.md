@@ -1,3 +1,6 @@
+# NOTE
+This repository has been merged into [pogo](https://github.com/kango2/pogo) and has since 22/07/2024 become redundant, future updates and commits to relevant scripts will be done in pogo.
+
 # Generate TE library using RepeatModeler
 When soft masking your genome, using a taxon repeats library (eg. from Dfam) will often result in low masking percentage because the library lack the species-specific repeats for your particular species. The presence of unmasked repeats in your genome, especially in high density will impede downstream annotation. Therefore, it is crucial to generate a species-specific repeat library in such cases.
 
